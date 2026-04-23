@@ -1,3 +1,4 @@
+'use client';
 import { Button } from '@/src/components/ui/Button';
 import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter } from 'lucide-react';
 
@@ -97,3 +98,4 @@ export const Footer = () => {
     </footer>
   );
 };;
+

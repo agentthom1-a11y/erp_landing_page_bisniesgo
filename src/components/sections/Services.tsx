@@ -1,3 +1,4 @@
+'use client';
 import { motion } from 'motion/react';
 import { PencilRuler, Code2, Link, Cpu, GraduationCap, Headset, ArrowRight } from 'lucide-react';
 import { Button } from '@/src/components/ui/Button';
@@ -143,3 +144,4 @@ export const ServicesAndSteps = ({ onBookDemo }: { onBookDemo: () => void }) => 
     </div>
   );
 };
+

@@ -1,3 +1,4 @@
+'use client';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { TrendingUp } from 'lucide-react';
@@ -157,3 +158,4 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
     </motion.div>
   );
 };
+

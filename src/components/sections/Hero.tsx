@@ -1,3 +1,4 @@
+'use client';
 import { motion } from 'motion/react';
 import { Button } from '@/src/components/ui/Button';
 import { CheckCircle2, ChevronRight, TrendingUp } from 'lucide-react';
@@ -249,3 +250,4 @@ export const Hero = ({ onBookDemo }: { onBookDemo: () => void }) => {
     </section>
   );
 };
+

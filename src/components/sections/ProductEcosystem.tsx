@@ -1,3 +1,4 @@
+'use client';
 import { motion } from 'motion/react';
 import { Layout, ShoppingCart, Package, DollarSign, Users, Briefcase, Heart, BarChart3, ChevronRight, TrendingUp, CreditCard, Search, Plus, ArrowRight } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
@@ -299,5 +300,6 @@ export const ProductEcosystem = () => {
     </section>
   );
 };
+
 
 

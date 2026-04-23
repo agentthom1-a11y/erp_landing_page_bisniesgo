@@ -1,3 +1,4 @@
+'use client';
 import { motion } from 'motion/react';
 import { ShieldCheck, Zap, BarChart, Settings, Users, Layers, MessageSquare, Globe } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
@@ -214,3 +215,4 @@ export const WhyBisniesgo = () => {
     </section>
   );
 };
+

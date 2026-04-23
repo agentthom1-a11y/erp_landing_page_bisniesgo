@@ -1,6 +1,7 @@
+'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Plus, Minus, ArrowUpRight, Factory, Truck, ShoppingBag, Package as PackageIcon, Stethoscope, Hotel, Building2, UtensilsCrossed } from 'lucide-react';
 import { blogPosts } from '../../data/blogData';
 
@@ -137,7 +138,7 @@ export const BlogPreview = () => {
               <h2 className="text-4xl lg:text-5xl font-black text-white mb-4">Insight & Artikel Bisnis</h2>
               <p className="text-xl text-gray-400">Pelajari strategi terbaru untuk mengembangkan bisnis Anda.</p>
            </div>
-           <Link to="/" className="font-bold text-white flex items-center gap-2 hover:text-brand-light transition-colors group">
+           <Link href="/" className="font-bold text-white flex items-center gap-2 hover:text-brand-light transition-colors group">
               Lihat Semua Artikel <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
            </Link>
         </div>
@@ -152,7 +153,7 @@ export const BlogPreview = () => {
               transition={{ delay: index * 0.1 }}
               className="group"
             >
-              <Link to={`/blog/${post.slug}`} className="block">
+              <Link href={`/blog/${post.slug}`} className="block">
                 <div className="aspect-[16/10] bg-white/5 rounded-3xl overflow-hidden mb-6 relative border border-white/5 group-hover:border-brand-light/30 transition-all duration-500">
                    <img 
                       src={post.image} 
@@ -183,3 +184,4 @@ export const BlogPreview = () => {
     </section>
   );
 };
+

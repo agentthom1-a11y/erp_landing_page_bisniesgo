@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Send, CheckCircle2 } from 'lucide-react';
@@ -134,3 +135,4 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
     </AnimatePresence>
   );
 };
+
