@@ -35,9 +35,12 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-4 gap-16 mb-20">
           <div className="lg:col-span-2">
-            <div className="text-3xl font-black tracking-tighter flex items-center mb-6">
-               <span className="text-white">bisnies</span>
-               <span className="text-brand-light">go</span>
+            <div className="mb-6">
+               <img 
+                 src="/logo/sinar-erp-logo-primary-transparent.png" 
+                 alt="SINAR ERP" 
+                 className="h-16 w-auto object-contain"
+               />
             </div>
             <p className="text-xl text-gray-400 mb-8 max-w-md">
               Membantu bisnis di Indonesia tumbuh, tertata, dan scalable melalui sistem teknologi yang bermakna dan terintegrasi.

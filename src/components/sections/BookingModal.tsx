@@ -38,7 +38,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-lg bg-[#064E3B] rounded-[40px] p-8 lg:p-12 shadow-2x-strong overflow-hidden border border-brand-light/20"
+            className="relative w-full max-w-lg bg-brand-dark rounded-[40px] p-8 lg:p-12 shadow-2x-strong overflow-hidden border border-brand-light/20"
           >
             {/* Background glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-light/10 rounded-full blur-[80px] pointer-events-none" />

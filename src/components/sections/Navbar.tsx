@@ -42,13 +42,14 @@ export const Navbar = ({ onBookDemo }: { onBookDemo: () => void }) => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div 
-          className="flex items-center gap-2 cursor-pointer"
+          className="flex items-center gap-3 cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-           <div className="w-8 h-8 bg-brand-light rounded-lg flex items-center justify-center font-bold text-xl text-brand-dark">B</div>
-           <div className="text-xl font-bold tracking-tight text-white">
-             Bisniesgo <span className="text-brand-light">SINAR</span>
-           </div>
+           <img 
+             src="/logo/sinar-erp-logo-primary-transparent.png" 
+             alt="SINAR ERP" 
+             className="h-14 w-auto object-contain"
+           />
         </div>
 
         <nav className="hidden md:flex items-center gap-8">

@@ -5,9 +5,9 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
   
-  --color-brand-dark: #064E3B;
-  --color-brand-light: #BEF264;
-  --color-bg-main: #022C22;
+  --color-brand-dark: #153D33;
+  --color-brand-light: #8CC63F;
+  --color-bg-main: #153D33;
 }
 
 @layer base {

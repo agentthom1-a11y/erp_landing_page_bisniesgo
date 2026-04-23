@@ -82,12 +82,16 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
           transition={{ duration: 0.8 }}
           className="mb-12"
         >
-          <div className="w-24 h-24 rounded-[2rem] bg-brand-light/10 flex items-center justify-center mb-8 mx-auto border border-brand-light/20 shadow-[0_0_40px_rgba(152,214,0,0.1)] relative">
-            <TrendingUp className="w-12 h-12 text-brand-light" />
+          <div className="w-40 h-40 rounded-[3rem] bg-brand-light/10 flex items-center justify-center mb-8 mx-auto border border-brand-light/20 shadow-[0_0_60px_rgba(152,214,0,0.15)] relative">
+            <img 
+              src="/logo/sinar-erp-icon-mark-transparent.png" 
+              alt="SINAR Mark" 
+              className="w-24 h-24 object-contain"
+            />
             <motion.div 
-               animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
+               animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0, 0.5] }}
                transition={{ duration: 2, repeat: Infinity }}
-               className="absolute inset-0 rounded-[2rem] border-2 border-brand-light/30"
+               className="absolute inset-0 rounded-[3rem] border-2 border-brand-light/30"
             />
           </div>
           <h2 className="text-brand-light font-black uppercase tracking-[0.4em] text-xs mb-2">Accelerating Business</h2>

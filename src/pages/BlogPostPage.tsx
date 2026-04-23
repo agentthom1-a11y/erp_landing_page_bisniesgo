@@ -27,8 +27,6 @@ export const BlogPostPage = ({ onBookDemo }: { onBookDemo: () => void }) => {
   }
 
   // Parse content into paragraphs
-  const paragraphs = post.content.trim().split('\n\n');
-
   return (
     <div className="pt-32 pb-24 bg-bg-main">
       <Helmet>
@@ -108,30 +106,99 @@ export const BlogPostPage = ({ onBookDemo }: { onBookDemo: () => void }) => {
         </motion.div>
 
         {/* Article Content */}
-        <article className="prose prose-invert prose-lg max-w-none mb-24">
-          <div className="space-y-8">
-            {paragraphs.map((p, i) => (
-              <motion.p 
+        <article className="max-w-none mb-24">
+          <div className="space-y-16">
+            {post.contentBlocks.map((block, i) => (
+              <motion.div 
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-xl text-gray-300 leading-relaxed font-medium"
+                className="group/block"
               >
-                {p}
-              </motion.p>
+                {block.heading && (
+                  <h2 className="text-3xl lg:text-4xl font-black text-white mb-8 tracking-tight leading-tight group-hover/block:text-brand-light transition-colors">
+                    {block.heading}
+                  </h2>
+                )}
+                
+                {block.type === 'paragraph' && block.content?.map((p, pi) => (
+                  <p key={pi} className="text-xl text-gray-300 leading-relaxed font-medium mb-6 last:mb-0">
+                    {p}
+                  </p>
+                ))}
+
+                {block.type === 'bullet' && (
+                  <ul className="space-y-4">
+                    {block.items?.map((item, ii) => (
+                      <li key={ii} className="flex items-start gap-4 text-xl text-gray-300 font-medium">
+                        <div className="w-2 h-2 rounded-full bg-brand-light mt-3 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </motion.div>
             ))}
           </div>
 
-          {/* Inline Quote/CTA Highlight */}
+          {/* Research Proof Section */}
+          {post.proofPoints && post.proofPoints.length > 0 && (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="my-20 p-8 lg:p-12 rounded-[2.5rem] bg-white/[0.02] border border-white/5 relative overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                <Clock className="w-32 h-32 text-brand-light" />
+              </div>
+              
+              <h3 className="text-sm font-black text-brand-light uppercase tracking-[0.3em] mb-6 flex items-center gap-3">
+                <span className="w-8 h-[1px] bg-brand-light/30" />
+                Research Insights
+              </h3>
+
+              {post.proofPoints.map((proof, i) => (
+                <div key={i} className="space-y-8">
+                  <p className="text-2xl font-bold text-white leading-snug">
+                    "{proof.claim}"
+                  </p>
+                  
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    {proof.evidence.map((ev, ei) => (
+                      <div key={ei} className="p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-brand-light/20 transition-all">
+                        <p className="text-xs font-black text-gray-500 uppercase tracking-widest mb-3">{ev.publication} ({ev.year})</p>
+                        <p className="text-sm text-white font-bold mb-2">{ev.source_title}</p>
+                        <p className="text-xs text-gray-400 mb-4">by {ev.authors}</p>
+                        <div className="pt-4 border-t border-white/5">
+                           <p className="text-sm text-brand-light/90 italic">"{ev.takeaway}"</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          )}
+
+          {/* Inline CTA Highlight */}
           <div className="my-16 relative">
             <div className="absolute -inset-4 bg-brand-light/20 rounded-[3rem] blur-3xl opacity-20" />
-            <div className="relative glass p-10 lg:p-14 rounded-[3rem] border-brand-light/10 text-center">
-               <h3 className="text-3xl lg:text-4xl font-black text-white mb-8">
-                 {post.ctaText}
+            <div className="relative glass p-10 lg:p-14 rounded-[3rem] border-brand-light/10 text-center overflow-hidden">
+               {/* Decorative background text */}
+               <div className="absolute -bottom-4 -right-4 text-9xl font-black text-brand-light/5 pointer-events-none select-none uppercase italic">
+                  Growth
+               </div>
+               
+               <h3 className="text-3xl lg:text-5xl font-black text-white mb-6 leading-tight max-w-2xl mx-auto">
+                 {post.primaryCta.label}
                </h3>
-               <Button size="lg" onClick={onBookDemo} className="h-16 px-12 text-lg rounded-2xl group">
-                  {post.ctaButton}
+               <p className="text-xl text-gray-400 mb-10 max-w-xl mx-auto font-medium">
+                  {post.primaryCta.text}
+               </p>
+               <Button size="lg" onClick={onBookDemo} className="h-16 px-12 text-lg rounded-2xl group relative z-10">
+                  Konsultasi Sekarang
                   <ArrowUpRight className="ml-2 w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                </Button>
             </div>
