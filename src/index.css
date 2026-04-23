@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-brand-dark: #064E3B;
+  --color-brand-light: #BEF264;
+  --color-bg-main: #022C22;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans bg-bg-main text-white antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-white;
+  }
+
+  ::selection {
+    @apply bg-brand-light/30 text-white;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-bg-main;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full border-2 border-transparent bg-clip-content;
+    &:hover {
+      @apply bg-brand-light/30;
+    }
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 border border-white/10 backdrop-blur-xl;
+  }
+  
+  .text-accent {
+    @apply text-brand-light;
+  }
+  
+  .bg-accent {
+    @apply bg-brand-light text-brand-dark;
+  }
+
+  .glow-box {
+    @apply relative overflow-hidden;
+    &::after {
+      content: '';
+      @apply absolute -inset-[100%] bg-gradient-to-tr from-brand-light/20 to-transparent opacity-0 transition-opacity duration-700 pointer-events-none;
+    }
+    &:hover::after {
+      @apply opacity-100;
+    }
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-brand-light/50;
+  }
+
+  .border-beam {
+    @apply relative overflow-hidden;
+    &::after {
+      content: '';
+      @apply absolute inset-0 rounded-[inherit] border border-transparent [mask-image:linear-gradient(white,white),linear-gradient(white,white)] [mask-clip:padding-box,border-box] [mask-composite:intersect] pointer-events-none;
+      background: linear-gradient(var(--beam-angle, 0deg), transparent, var(--color-brand-light), transparent) border-box;
+      animation: beam-rotate 4s linear infinite;
+    }
+  }
+
+  @keyframes beam-rotate {
+    from { --beam-angle: 0deg; }
+    to { --beam-angle: 360deg; }
+  }
+}
+
+@property --beam-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
