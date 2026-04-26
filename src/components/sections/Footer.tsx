@@ -6,7 +6,11 @@ export const FinalCTA = ({ onBookDemo }: { onBookDemo: () => void }) => {
   return (
     <section className="py-24 bg-bg-main px-6">
       <div className="max-w-7xl mx-auto rounded-[60px] glass p-12 lg:p-24 text-center relative overflow-hidden border-brand-light/20">
-        {/* Background glow */}
+        {/* Background image and glow */}
+        <div className="absolute inset-0 z-0">
+          <img src="/images/blog_growth.png" alt="Business Growth" className="w-full h-full object-cover opacity-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg-main via-bg-main/40 to-transparent" />
+        </div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-light/10 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="relative z-10 max-w-4xl mx-auto">

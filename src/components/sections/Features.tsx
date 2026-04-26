@@ -118,7 +118,9 @@ export const Features = () => {
                   "SINAR ERP membantu kami mendigitalisasi proses manual yang rumit menjadi satu dashboard yang <span className="text-brand-light">sangat jernih</span>."
                 </blockquote>
                 <div className="flex items-center gap-4">
-                   <div className="w-12 h-12 rounded-full bg-brand-light/20 border border-brand-light/40" />
+                   <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-brand-light/30 shadow-xl relative shrink-0">
+                      <img src="/images/ceo.png" alt="CEO PT Niaga Nusantara" className="w-full h-full object-cover" />
+                   </div>
                    <div>
                       <div className="font-black text-white uppercase tracking-widest text-xs">CEO, PT Niaga Nusantara</div>
                       <div className="text-brand-light text-[10px] font-bold uppercase tracking-widest">Enterprise Client</div>
@@ -183,8 +185,9 @@ export const WhyBisniesgo = () => {
 
            <div className="relative">
               <div className="aspect-square bg-gradient-to-br from-brand-light/20 to-white/5 rounded-[40px] p-[1px]">
-                 <div className="bg-white/5 backdrop-blur-3xl w-full h-full rounded-[39px] p-12 flex flex-col justify-center gap-8 border border-white/10">
-                    <div className="space-y-4">
+                 <div className="bg-white/5 backdrop-blur-3xl w-full h-full rounded-[39px] p-12 flex flex-col justify-center gap-8 border border-white/10 relative overflow-hidden">
+                    <img src="/images/blog_culture.png" alt="Indonesian Business Culture" className="absolute inset-0 w-full h-full object-cover opacity-10" />
+                    <div className="space-y-4 relative z-10">
                        <div className="text-5xl font-black text-brand-light">Meaningful Growth</div>
                        <p className="text-2xl font-medium text-gray-300 italic">
                          "Kami membangun sistem agar pemilik bisnis bisa fokus pada hal-hal yang benar-benar penting."

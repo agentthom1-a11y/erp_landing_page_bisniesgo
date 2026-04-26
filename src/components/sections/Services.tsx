@@ -100,7 +100,8 @@ export const ServicesAndSteps = ({ onBookDemo }: { onBookDemo: () => void }) => 
               <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-8 leading-tight">
                 Langkah Cerdas <br className="hidden sm:block" /> Menuju Bisnis <br className="hidden sm:block" /> yang <span className="text-brand-light">Scalable.</span>
               </h2>
-              <div className="glass p-10 rounded-[40px] text-white border-brand-light/20 relative">
+              <div className="glass p-10 rounded-[40px] text-white border-brand-light/20 relative overflow-hidden group">
+                 <img src="/images/blog_automation.png" alt="Automation with SINAR ERP" className="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-700" />
                  <div className="absolute top-0 right-0 p-8 opacity-10">
                     <ArrowRight className="w-24 h-24 rotate-[-45deg]" />
                  </div>

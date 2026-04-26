@@ -117,7 +117,7 @@ export const blogPosts: BlogPost[] = [
       { name: 'SINAR ERP', url: '/#produk' },
       { name: 'Implementation', url: '/#solusi' }
     ],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog_growth.png',
     date: '12 Apr 2026',
     author: 'Bisniesgo Team',
     readTime: '5 min read'
@@ -184,7 +184,7 @@ export const blogPosts: BlogPost[] = [
       { name: 'SINAR ERP', url: '/#produk' },
       { name: 'Automation', url: '/#solusi' }
     ],
-    image: 'https://images.unsplash.com/photo-1551288049-bbbda536639a?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog_automation.png',
     date: '08 Apr 2026',
     author: 'Bisniesgo Team',
     readTime: '4 min read'
@@ -230,7 +230,7 @@ export const blogPosts: BlogPost[] = [
     internalLinks: [
       { name: 'SINAR ERP', url: '/#produk' }
     ],
-    image: 'https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog_digitalization.png',
     date: '05 Apr 2026',
     author: 'Bisniesgo Team',
     readTime: '6 min read'
@@ -276,7 +276,7 @@ export const blogPosts: BlogPost[] = [
     internalLinks: [
       { name: 'SINAR Inventory', url: '/#produk' }
     ],
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog_inventory.png',
     date: '01 Apr 2026',
     author: 'Bisniesgo Team',
     readTime: '5 min read'
@@ -321,7 +321,7 @@ export const blogPosts: BlogPost[] = [
     internalLinks: [
       { name: 'SINAR Finance', url: '/#produk' }
     ],
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog_finance.png',
     date: '28 Mar 2026',
     author: 'Bisniesgo Team',
     readTime: '4 min read'
@@ -366,7 +366,7 @@ export const blogPosts: BlogPost[] = [
     internalLinks: [
       { name: 'Analytics', url: '/#solusi' }
     ],
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog_culture.png',
     date: '25 Mar 2026',
     author: 'Bisniesgo Team',
     readTime: '5 min read'

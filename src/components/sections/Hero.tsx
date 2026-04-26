@@ -92,10 +92,20 @@ export const Hero = ({ onBookDemo }: { onBookDemo: () => void }) => {
           transition={{ duration: 1, delay: 0.2 }}
           className="relative"
         >
-          {/* Dashboard Mockup - Rendered with Tailwind */}
-          <div className="relative glass rounded-2xl shadow-2xl p-4 aspect-video sm:aspect-[4/3] w-full overflow-hidden border border-white/10">
-            {/* Live Cashflow Stream - Hero Overlay */}
-            <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-brand-light/10 to-transparent pointer-events-none z-20 hidden sm:flex items-center overflow-hidden">
+            {/* Dashboard Mockup - Rendered with Tailwind */}
+            <div className="relative glass rounded-2xl shadow-2xl p-4 aspect-video sm:aspect-[4/3] w-full overflow-hidden border border-white/10 group">
+              {/* Background Indonesian Business Image */}
+              <div className="absolute inset-0 z-0">
+                <img 
+                  src="/images/hero.png" 
+                  alt="Indonesian Business ERP" 
+                  className="w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-main via-bg-main/40 to-transparent" />
+              </div>
+
+              {/* Live Cashflow Stream - Hero Overlay */}
+              <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-brand-light/10 to-transparent pointer-events-none z-20 hidden sm:flex items-center overflow-hidden">
                <motion.div 
                  animate={{ x: ["0%", "-50%"] }}
                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
