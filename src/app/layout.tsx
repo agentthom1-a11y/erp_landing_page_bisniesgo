@@ -1,12 +1,6 @@
-'use client';
-
+import { Metadata, Viewport } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
-import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Preloader } from '@/src/components/ui/Preloader';
-import { Navbar } from '@/src/components/sections/Navbar';
-import { Footer } from '@/src/components/sections/Footer';
-import { BookingModal } from '@/src/components/sections/BookingModal';
+import { RootLayoutClient } from '@/src/components/layout/RootLayoutClient';
 import '@/src/index.css';
 
 const inter = Inter({
@@ -19,48 +13,74 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-display',
 });
 
+export const viewport: Viewport = {
+  themeColor: '#98D600',
+  width: 'device-width',
+  initialScale: 1,
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://sinar-erp.bisniesgo.cloud'),
+  title: {
+    default: 'SINAR ERP - Premium ERP for Indonesian Businesses',
+    template: '%s | SINAR ERP'
+  },
+  description: 'Integrated, scalable, and meaningful ERP solutions for Indonesian SMEs and enterprises to grow with discipline and clarity.',
+  keywords: ['ERP Indonesia', 'Sistem ERP', 'Software Akuntansi', 'Bisniesgo', 'SINAR ERP', 'SME ERP Indonesia'],
+  authors: [{ name: 'Bisniesgo Team' }],
+  creator: 'Bisniesgo',
+  publisher: 'Bisniesgo',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: 'SINAR ERP - Premium ERP for Indonesian Businesses',
+    description: 'Integrated, scalable, and meaningful ERP solutions for Indonesian SMEs and enterprises.',
+    url: 'https://sinar-erp.bisniesgo.cloud',
+    siteName: 'SINAR ERP',
+    locale: 'id_ID',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SINAR ERP - Premium ERP for Indonesian Businesses',
+    description: 'Integrated, scalable, and meaningful ERP solutions for Indonesian SMEs and enterprises.',
+    creator: '@bisniesgo',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: '/logo/sinar-erp-icon-mark-transparent.png',
+    shortcut: '/logo/sinar-erp-icon-mark-transparent.png',
+    apple: '/logo/sinar-erp-icon-mark-transparent.png',
+  },
+};
+
+import { JsonLd } from '@/src/components/seo/JsonLd';
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [showPreloader, setShowPreloader] = useState(true);
-
-  useEffect(() => {
-    const handleOpenModal = () => setIsModalOpen(true);
-    window.addEventListener('open-demo-modal', handleOpenModal);
-    return () => window.removeEventListener('open-demo-modal', handleOpenModal);
-  }, []);
-
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
-
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <head>
-        <title>SINAR ERP - Premium ERP for Indonesian Businesses</title>
-        <meta name="description" content="Integrated, scalable, and meaningful ERP solutions for Indonesian SMEs and enterprises to grow with discipline and clarity." />
-        <link rel="icon" type="image/png" href="/logo/sinar-erp-icon-mark-transparent.png" />
-      </head>
       <body className="min-h-screen bg-bg-main font-sans selection:bg-brand-light selection:text-brand-dark antialiased">
-        <AnimatePresence mode="wait">
-          {showPreloader ? (
-            <Preloader key="preloader" onComplete={() => setShowPreloader(false)} />
-          ) : (
-            <motion.div
-              key="content"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-            >
-              <Navbar onBookDemo={openModal} />
-              {children}
-              <Footer />
-            </motion.div>
-          )}
-        </AnimatePresence>
-        <BookingModal isOpen={isModalOpen} onClose={closeModal} />
+        <JsonLd />
+        <RootLayoutClient>
+          {children}
+        </RootLayoutClient>
       </body>
     </html>
   );

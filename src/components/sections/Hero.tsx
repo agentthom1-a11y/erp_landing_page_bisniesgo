@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'motion/react';
+import Image from 'next/image';
 import { Button } from '@/src/components/ui/Button';
 import { CheckCircle2, ChevronRight, TrendingUp } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
@@ -96,10 +97,12 @@ export const Hero = ({ onBookDemo }: { onBookDemo: () => void }) => {
             <div className="relative glass rounded-2xl shadow-2xl p-4 aspect-video sm:aspect-[4/3] w-full overflow-hidden border border-white/10 group">
               {/* Background Indonesian Business Image */}
               <div className="absolute inset-0 z-0">
-                <img 
+                <Image 
                   src="/images/hero.png" 
                   alt="Indonesian Business ERP" 
-                  className="w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-700"
+                  fill
+                  priority
+                  className="object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-main via-bg-main/40 to-transparent" />
               </div>
