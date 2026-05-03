@@ -1,12 +1,13 @@
 import { MetadataRoute } from 'next';
-import { blogPosts } from '@/src/data/blogData';
+import { getAllPosts } from '@/src/lib/contentParser';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://sinar-erp.bisniesgo.cloud';
 
-  const posts = blogPosts.map((post) => ({
+  const allPosts = getAllPosts();
+  const posts = allPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(),
+    lastModified: new Date(post.publishedAtIso || new Date()),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   }));

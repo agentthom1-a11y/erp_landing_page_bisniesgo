@@ -6,9 +6,10 @@ import { ProductEcosystem } from '@/src/components/sections/ProductEcosystem';
 import { Features, WhyBisniesgo } from '@/src/components/sections/Features';
 import { ServicesAndSteps } from '@/src/components/sections/Services';
 import { TrustSection, FAQ, BlogPreview } from '@/src/components/sections/TrustAndFaq';
+import { DemoApp } from '@/src/components/sections/DemoApp';
 import { FinalCTA } from '@/src/components/sections/Footer';
 
-export function HomePageClient() {
+export function HomePageClient({ posts = [] }: { posts?: any[] }) {
   const { openDemoModal } = useDemo();
 
   return (
@@ -18,9 +19,10 @@ export function HomePageClient() {
       <ProductEcosystem />
       <Features />
       <WhyBisniesgo />
+      <DemoApp />
       <ServicesAndSteps onBookDemo={openDemoModal} />
       <FAQ />
-      <BlogPreview />
+      <BlogPreview posts={posts} />
       <FinalCTA onBookDemo={openDemoModal} />
     </>
   );

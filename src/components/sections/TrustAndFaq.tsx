@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
 import { Plus, Minus, ArrowUpRight, Factory, Truck, ShoppingBag, Package as PackageIcon, Stethoscope, Hotel, Building2, UtensilsCrossed } from 'lucide-react';
-import { blogPosts } from '../../data/blogData';
 
 const faqs = [
   {
@@ -129,7 +128,7 @@ export const FAQ = () => {
   );
 };
 
-export const BlogPreview = () => {
+export const BlogPreview = ({ posts = [] }: { posts?: any[] }) => {
   return (
     <section id="blog" className="py-24 bg-bg-main border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
@@ -138,13 +137,13 @@ export const BlogPreview = () => {
               <h2 className="text-4xl lg:text-5xl font-black text-white mb-4">Insight & Artikel Bisnis</h2>
               <p className="text-xl text-gray-400">Pelajari strategi terbaru untuk mengembangkan bisnis Anda.</p>
            </div>
-           <Link href="/" className="font-bold text-white flex items-center gap-2 hover:text-brand-light transition-colors group">
+           <Link href="/blog" className="font-bold text-white flex items-center gap-2 hover:text-brand-light transition-colors group">
               Lihat Semua Artikel <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
            </Link>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-          {blogPosts.slice(0, 6).map((post, index) => (
+          {posts.slice(0, 6).map((post, index) => (
             <motion.div
               key={post.slug}
               initial={{ opacity: 0, y: 20 }}

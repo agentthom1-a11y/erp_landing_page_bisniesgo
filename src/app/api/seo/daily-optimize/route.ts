@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
-import { blogPosts } from '@/src/data/blogData';
+import { getAllPosts } from '@/src/lib/contentParser';
 
 const BASE_URL = 'https://sinar-erp.bisniesgo.cloud';
 const INDEXNOW_KEY = 'f675f284e3df41fba359992f9d8544ab';
@@ -22,10 +22,11 @@ export async function GET(request: Request) {
     revalidatePath('/', 'layout');
 
     // 3. Collect URLs for IndexNow
+    const allPosts = getAllPosts();
     const urlList = [
       BASE_URL,
       `${BASE_URL}/sitemap.xml`,
-      ...blogPosts.map((post) => `${BASE_URL}/blog/${post.slug}`)
+      ...allPosts.map((post) => `${BASE_URL}/blog/${post.slug}`)
     ];
 
     // 4. Submit to IndexNow
