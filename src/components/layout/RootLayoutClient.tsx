@@ -6,6 +6,7 @@ import { Preloader } from '@/src/components/ui/Preloader';
 import { Navbar } from '@/src/components/sections/Navbar';
 import { Footer } from '@/src/components/sections/Footer';
 import { BookingModal } from '@/src/components/sections/BookingModal';
+import { FloatingCTA } from '@/src/components/ui/FloatingCTA';
 
 import { DemoProvider } from '@/src/lib/contexts/DemoContext';
 
@@ -40,6 +41,7 @@ export function RootLayoutClient({ children }: { children: React.ReactNode }) {
         )}
       </AnimatePresence>
       <BookingModal isOpen={isModalOpen} onClose={closeModal} />
+      <FloatingCTA />
     </DemoProvider>
   );
 }

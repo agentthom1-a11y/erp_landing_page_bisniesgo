@@ -23,7 +23,7 @@ export const FinalCTA = ({ onBookDemo }: { onBookDemo: () => void }) => {
           <div className="flex flex-wrap justify-center gap-6">
             <Button size="lg" className="w-full sm:w-auto" onClick={onBookDemo}>Jadwalkan Demo</Button>
             <Button variant="secondary" size="lg" className="w-full sm:w-auto" onClick={() => {
-              window.location.href = "mailto:hello@bisniesgo.id";
+              window.location.href = "mailto:hello@bisnies.id";
             }}>
               Hubungi Tim Kami
             </Button>
@@ -79,11 +79,11 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                  <Mail className="w-5 h-5 text-brand-light shrink-0" />
-                 <span className="text-gray-400">hello@bisniesgo.id</span>
+                 <a href="mailto:hello@bisnies.id" className="text-gray-400 hover:text-brand-light transition-colors">hello@bisnies.id</a>
               </li>
               <li className="flex items-center gap-3">
                  <Phone className="w-5 h-5 text-brand-light shrink-0" />
-                 <span className="text-gray-400">+62 812 3456 7890</span>
+                 <a href="https://wa.me/62895367265775" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-light transition-colors">+62 895-3672-65775</a>
               </li>
             </ul>
           </div>

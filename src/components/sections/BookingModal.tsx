@@ -188,7 +188,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                         Selesai
                       </Button>
                       <a
-                        href={`https://wa.me/6281234567890?text=Halo%2C%20saya%20${encodeURIComponent(form.nama)}%20dari%20${encodeURIComponent(form.perusahaan)}%20ingin%20jadwalkan%20demo%20SINAR%20ERP.`}
+                        href={`https://wa.me/62895367265775?text=Halo%2C%20saya%20${encodeURIComponent(form.nama)}%20dari%20${encodeURIComponent(form.perusahaan)}%20ingin%20jadwalkan%20demo%20SINAR%20ERP.`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/5 transition-all text-sm font-semibold"
