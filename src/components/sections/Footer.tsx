@@ -1,6 +1,6 @@
 'use client';
 import { Button } from '@/src/components/ui/Button';
-import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter, MessageCircle } from 'lucide-react';
 
 export const FinalCTA = ({ onBookDemo }: { onBookDemo: () => void }) => {
   return (
@@ -28,6 +28,33 @@ export const FinalCTA = ({ onBookDemo }: { onBookDemo: () => void }) => {
               Hubungi Tim Kami
             </Button>
           </div>
+
+          {/* Trust/Comfort Info */}
+          <div className="mt-12 pt-8 border-t border-white/5 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-sm text-gray-500 font-medium">
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-light animate-pulse" />
+              Konsultasi Bebas Tekanan & Komitmen
+            </span>
+            <span className="hidden sm:inline text-white/10">|</span>
+            <a 
+              href="https://wa.me/62895367265775?text=Halo%20SINAR%20ERP%2C%20saya%20ingin%20tanya-tanya%20mengenai%20sistem%20dan%20implementasi." 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-400 hover:text-brand-light transition-colors flex items-center gap-1.5"
+            >
+              <MessageCircle className="w-4 h-4 text-[#25D366]" />
+              WhatsApp: +62 895-3672-65775
+            </a>
+            <span className="hidden sm:inline text-white/10">|</span>
+            <a 
+              href="mailto:hello@bisnies.id" 
+              className="text-gray-400 hover:text-brand-light transition-colors flex items-center gap-1.5"
+            >
+              <Mail className="w-4 h-4 text-brand-light" />
+              Email: hello@bisnies.id
+            </a>
+          </div>
+
         </div>
       </div>
     </section>

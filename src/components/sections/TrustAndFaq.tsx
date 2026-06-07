@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
-import { Plus, Minus, ArrowUpRight, Factory, Truck, ShoppingBag, Package as PackageIcon, Stethoscope, Hotel, Building2, UtensilsCrossed } from 'lucide-react';
+import { Plus, Minus, ArrowUpRight, Factory, Truck, ShoppingBag, Package as PackageIcon, Stethoscope, Hotel, Building2, UtensilsCrossed, MessageCircle, Mail } from 'lucide-react';
 
 const faqs = [
   {
@@ -123,10 +123,61 @@ export const FAQ = () => {
             </div>
           ))}
         </div>
+
+        {/* Trust/Contact CTA Card */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-16 p-8 rounded-[32px] border border-white/5 bg-white/[0.02] relative overflow-hidden backdrop-blur-xl"
+        >
+          {/* Subtle glowing accents */}
+          <div className="absolute -right-24 -bottom-24 w-60 h-60 bg-brand-light/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -left-24 -top-24 w-60 h-60 bg-brand-light/5 rounded-full blur-3xl pointer-events-none" />
+          
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-center md:text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-light/10 border border-brand-light/20 text-brand-light text-xs font-bold uppercase tracking-wider mb-4">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-light opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-light"></span>
+                </span>
+                Tim Konsultan Aktif
+              </div>
+              <h3 className="text-2xl md:text-3xl font-black text-white mb-3 tracking-tight">
+                Masih Ragu & Butuh Bantuan?
+              </h3>
+              <p className="text-gray-400 text-sm md:text-base max-w-xl leading-relaxed">
+                Kami paham bahwa memilih sistem ERP adalah keputusan besar. Silakan berdiskusi gratis dengan tim kami via WhatsApp atau Email secara santai & transparan.
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto shrink-0">
+              <a
+                href="https://wa.me/62895367265775?text=Halo%20SINAR%20ERP%2C%20saya%20ingin%20tanya-tanya%20dan%20konsultasi%20mengenai%20sistem%20ERP."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba56] text-white font-bold text-sm transition-all hover:scale-[1.02] shadow-lg shadow-[#25D366]/10"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Chat via WhatsApp
+              </a>
+              <a
+                href="mailto:hello@bisnies.id"
+                className="flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-sm transition-all hover:scale-[1.02]"
+              >
+                <Mail className="w-5 h-5 text-brand-light" />
+                Kirim Email
+              </a>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
 };
+
 
 export const BlogPreview = ({ posts = [] }: { posts?: any[] }) => {
   return (
